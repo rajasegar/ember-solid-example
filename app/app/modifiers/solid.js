@@ -6,6 +6,6 @@ export default class SolidModifier extends Modifier {
   modify(element, [App], props) {
     element.replaceChildren();
     const dispose = render(() => App(props), element);
-    registerDestructor(this, () => dispose());
+    registerDestructor(this, dispose);
   }
 }
